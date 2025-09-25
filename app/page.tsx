@@ -8,7 +8,10 @@ import { Search } from "lucide-react"
 async function getInternships() {
   try {
     // Use relative URL for internal API calls
-    const res = await fetch("/api/internships", {
+    const apiUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/internships`;
+    console.log(`[v0] Fetching from: ${apiUrl}`);
+
+    const res = await fetch(apiUrl, {
       cache: "no-store",
     })
 
